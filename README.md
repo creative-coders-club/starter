@@ -7,6 +7,11 @@
 
 ```sh
 yarn install
-
 yarn start
 ```
+
+
+### todo
+- 테스트 커버리지, ts alias, jest alias 설정 (done) 
+- svg 와 같은 이미지 설정 (todo)
+- stylelint 설정
