@@ -4,8 +4,7 @@ import * as S from './App.styles';
 
 import { TodoAdder } from 'src/components/todolist/TodoAdder';
 import { TodoFilter } from 'src/components/todolist/TodoFilter';
-import { TodoItem } from 'src/components/todolist/TodoItem';
-import { Container } from './App.styles';
+import { TodoList } from 'src/components/todolist/TodoList/TodoList';
 
 const initialData: Todo[] = [
   {
@@ -20,6 +19,7 @@ const initialData: Todo[] = [
   },
 ];
 
+// TODO: Context 로 관리해서 props drilling 방식 제거?
 function App() {
   const [todos, setTodos] = useState<Todo[]>(initialData);
   const [filter, setFilter] = useState<Filter>('ALL');
@@ -52,16 +52,7 @@ function App() {
       <S.Container>
         <TodoAdder onAddTodo={handleAddTodo} />
         <TodoFilter filter={filter} onChangeFilter={handleChangeFilter} />
-        {todoList.map((todo) => {
-          return (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              onRemoveTodo={handleRemoveTodo}
-              onToggleTodoDone={handleToggleTodoDone}
-            />
-          );
-        })}
+        <TodoList todos={todoList} onRemoveTodo={handleRemoveTodo} onToggleTodoDone={handleToggleTodoDone} />
       </S.Container>
     </S.Wrapper>
   );
