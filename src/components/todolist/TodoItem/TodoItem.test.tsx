@@ -12,17 +12,9 @@ describe('TodoItem 컴포넌트', () => {
 
   const onRemoveTodo = jest.fn(); // 가짜 함수, 모의
   const onToggleTodoDone = jest.fn();
-  const onDragTodoItem = jest.fn();
 
   function renderComponent(todo: Todo) {
-    return render(
-      <TodoItem
-        todo={todo}
-        onRemoveTodo={onRemoveTodo}
-        onToggleTodoDone={onToggleTodoDone}
-        onDragTodoItem={onDragTodoItem}
-      />,
-    );
+    return render(<TodoItem todo={todo} onRemoveTodo={onRemoveTodo} onToggleTodoDone={onToggleTodoDone} />);
   }
 
   beforeEach(() => jest.clearAllMocks());

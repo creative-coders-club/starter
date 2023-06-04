@@ -6,10 +6,9 @@ type TodoItemProps = {
   todo: Todo;
   onRemoveTodo: (todoId: Todo['id']) => void;
   onToggleTodoDone: (todoId: Todo['id']) => void;
-  onDragTodoItem: (fromTodoId: Todo['id'], toTodoItemId: Todo['id']) => void;
 };
 
-export function TodoItem({ todo, onRemoveTodo, onToggleTodoDone, onDragTodoItem }: TodoItemProps) {
+export function TodoItem({ todo, onRemoveTodo, onToggleTodoDone }: TodoItemProps) {
   const { id, text, done } = todo;
   const [isOver, setIsOver] = useState(false);
 
