@@ -1,7 +1,5 @@
 import { MouseEvent } from 'react';
 
-import { Filter } from 'src/App';
-
 import * as S from './TodoFilter.styles';
 
 type TodoFilterProps = {
@@ -19,8 +17,7 @@ export function TodoFilter({ filter, onChangeFilter }: TodoFilterProps) {
 
   return (
     <S.Filters>
-      {/* 커버리지 100% */}
-      {/* {filters.map((_filter) => (
+      {filters.map((_filter) => (
         <S.FilterItem
           key={_filter}
           data-filter={_filter}
@@ -29,16 +26,7 @@ export function TodoFilter({ filter, onChangeFilter }: TodoFilterProps) {
         >
           {_filter}
         </S.FilterItem>
-      ))} */}
-      <S.FilterItem data-filter="ALL" onClick={handleClickFilter} className={filter === 'ALL' ? 'active' : ''}>
-        ALL
-      </S.FilterItem>
-      <S.FilterItem data-filter="TODO" onClick={handleClickFilter} className={filter === 'TODO' ? 'active' : ''}>
-        TODO
-      </S.FilterItem>
-      <S.FilterItem data-filter="DONE" onClick={handleClickFilter} className={filter === 'DONE' ? 'active' : ''}>
-        DONE
-      </S.FilterItem>
+      ))}
     </S.Filters>
   );
 }
