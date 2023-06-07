@@ -1,5 +1,7 @@
+import { TodoPage } from './components/Todo';
+
 function App() {
-  return <div>TEST</div>;
+  return <TodoPage />;
 }
 
 export default App;
