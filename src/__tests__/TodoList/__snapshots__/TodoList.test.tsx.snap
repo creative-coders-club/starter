@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList 컴포넌트 테스트 TodoList가 전달받은 list를 잘 그려주는가 1`] = `
+<DocumentFragment>
+  <ul
+    class="todo_list"
+  >
+    <li>
+      test1
+      <button
+        class="todo_delete"
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
