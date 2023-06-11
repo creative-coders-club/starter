@@ -1,14 +1,22 @@
 .app {
   text-align: center;
+  margin-top: 50px;
+}
+
+.todo_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .todo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   padding: 10px;
+  width: 500px;
 
   &_text {
     margin: 0;
