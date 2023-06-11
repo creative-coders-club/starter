@@ -1,4 +1,4 @@
-import S from './TodoPage.module.scss';
+import S from '../TodoPage/TodoPage.module.scss';
 import { TodoType } from '../../types';
 
 export const Todo = ({ todo, removeTodo }: TodoProps) => {

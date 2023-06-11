@@ -1,6 +1,6 @@
-import { Todo } from './Todo';
+import { Todo } from '../Todo/Todo';
 import { TodoType } from '../../types';
-import S from './TodoPage.module.scss';
+import S from '../TodoPage/TodoPage.module.scss';
 
 export const TodoList = ({ todos, removeTodo }: TodoListProps) => {
   return (

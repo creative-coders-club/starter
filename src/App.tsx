@@ -1,4 +1,4 @@
-import { TodoPage } from './components/Todo/TodoPage';
+import { TodoPage } from './components/TodoPage/TodoPage';
 
 function App() {
   return <TodoPage />;

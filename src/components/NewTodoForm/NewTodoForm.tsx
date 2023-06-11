@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import S from './TodoPage.module.scss';
+import S from '../TodoPage/TodoPage.module.scss';
 
 export const NewTodoForm = ({ addTodo }: TodoProps) => {
   const [text, setText] = useState('');

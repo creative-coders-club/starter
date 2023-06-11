@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { NewTodoForm } from './NewTodoForm';
-import { TodoList } from './TodoList';
+import { NewTodoForm } from '../NewTodoForm/NewTodoForm';
+import { TodoList } from '../TodoList/TodoList';
 
 import S from './TodoPage.module.scss';
 import { TodoType } from '../../types';
