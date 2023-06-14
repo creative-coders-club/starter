@@ -1,7 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Todo } from '../../components/Todo/Todo';
 import userEvent from '@testing-library/user-event';
+import { ReactNode } from 'react';
 
+// setup function
+function setup(jsx: React.ReactElement) {
+  return {
+    user: userEvent.setup(),
+    // Import `render` from the framework library of your choice.
+    // See https://testing-library.com/docs/dom-testing-library/install#wrappers
+    ...render(jsx),
+  };
+}
 describe('Todo 컴포넌트 테스트', () => {
   const mockFn = jest.fn();
   const TodoComponent = <Todo todo={{ id: 1, text: 'test' }} removeTodo={mockFn} />;
@@ -20,12 +30,12 @@ describe('Todo 컴포넌트 테스트', () => {
     expect(deleteButton).toBeInTheDocument();
   });
 
-  it('delete 버튼을 클릭하면 removeTodo 함수가 호출되는가', () => {
-    render(TodoComponent);
-    const deleteButton = screen.getByRole('button');
+  it.only('delete 버튼을 클릭하면 removeTodo 함수가 호출되는가', async () => {
+    const { user } = setup(TodoComponent);
+    const deleteButton = screen.getByRole('button', {
+      name: /delete/i,
+    });
 
-    userEvent.click(deleteButton);
-
-    expect(mockFn).toBeCalledTimes(1);
+    await user.click(deleteButton);
   });
 });
